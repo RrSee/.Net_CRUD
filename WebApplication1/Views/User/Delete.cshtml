@@ -1,0 +1,12 @@
+﻿@model WebApplication1.Entities.User
+
+<p>Name:@Model.Name</p>
+<p>Surname:@Model.Surname</p>
+<p>Email:@Model.Surname</p>
+<p>PhoneNumber:@Model.PhoneNumber</p>
+
+<form asp-action="Delete">
+	<input type="hidden" asp-for="Id"/>
+	<button type="submit">Delete</button>
+</form>
+<a asp-action="Index">Back To List</a>

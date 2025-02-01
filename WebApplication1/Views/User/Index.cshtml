@@ -1,0 +1,26 @@
+﻿@model IEnumerable<WebApplication1.Entities.User>
+
+<h2>Users List</h2>
+<a asp-action="Create">Add New User</a>
+
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Surname</th>
+		<th>Email</th>
+		<th>Phone Number</th>
+		<th>Actions</th>
+	</tr>
+	@foreach(var item in Model) {
+		<tr>
+			<td>@item.Name</td>
+			<td>@item.Surname</td>
+			<td>@item.Email</td>
+			<td>@item.PhoneNumber</td>
+			<td>
+				<a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+				<a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+			</td>
+		</tr>
+	}
+</table>
